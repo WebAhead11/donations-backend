@@ -9,7 +9,7 @@
     "dev": "nodemon server.js",
     "build:db": "node database/build.js"
   },
-  "type": "module",
+  "type": "commonjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WebAhead11/donations-backend.git"
