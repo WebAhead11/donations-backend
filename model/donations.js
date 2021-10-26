@@ -2,11 +2,9 @@ const path = require("path");
 const db = require(path.join(__dirname, "..", "database", "connection"));
 
 function getDonationByMail(mailDonation) {
-  return db
-    .query(`SELECT * FROM donation WHERE email=${mailDonation}`)
-    .then((result) => {
-      return result.rows;
-    });
+  return db.query(`SELECT * FROM donation WHERE email=${mailDonation}`).then((result) => {
+    return result.rows;
+  });
 }
 
 function addDonation(newDonation) {
@@ -38,5 +36,10 @@ function getAllDonations() {
     return result.rows[0];
   });
 }
+function searchDonations(category, area, delivery) {
+  return db.query(`SELECT * FROM donations WHERE category=$1 AND area=$2 AND delivery=$3 `, [category, area, delivery]).then((result) => {
+    return result.rows;
+  });
+}
 
-module.exports = { addDonation, getAllDonations, getDonationByMail };
+module.exports = { addDonation, searchDonations, getAllDonations, getDonationByMail };

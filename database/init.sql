@@ -19,13 +19,13 @@ CREATE TABLE donations (
 
 
 INSERT INTO donations (item_title,item_descriptions, photo, category, area,city,email,phone, delivery,item_status) VALUES
-('T-shirt POLO','size XXL white color','','CLOTHES', 'NORTH','Haifa','mario.saliba98@gmail.com','0543198210', 'yes','available'),
-('T-shirt NAUTICA','size XL GREEN color','','CLOTHES', 'NORTH','Nazareth','mario.saliba98@gmail.com','0543198210', 'yes','available'),
-('T-shirt NIKE','size L BLUE color','','CLOTHES', 'CENTER','Tel-Aviv','mario.saliba98@gmail.com','0543198210', 'yes','available'),
-('T-shirt ADIDAS','size M RED color','','CLOTHES', 'CENTER','Tel-Aviv','mario.saliba98@gmail.com','0543198210', 'yes','delivered'),
-('T-shirt JOUVANI','size S BLACK color','','CLOTHES', 'SOUTH','Eilat','mario.saliba98@gmail.com','0543198210', 'yes','delivered'),
-('T-shirt GUCCI','size XS YELLOW color','','CLOTHES', 'SOUTH','Eilat','mario.saliba98@gmail.com','0543198210', 'no','delivered'),
-('T-shirt SELECT','size XXS PINK color','','CLOTHES', 'SOUTH','Eilat','mario.saliba98@gmail.com','0543198210', 'no','delivered'),
+('T-shirt POLO','size XXL white color','','clothes', 'NORTH','Haifa','mario.saliba98@gmail.com','0543198210', 'yes','available'),
+('T-shirt NAUTICA','size XL GREEN color','','clothes', 'NORTH','Nazareth','mario.saliba98@gmail.com','0543198210', 'yes','available'),
+('T-shirt NIKE','size L BLUE color','','clothes', 'CENTER','Tel-Aviv','mario.saliba98@gmail.com','0543198210', 'yes','available'),
+('T-shirt ADIDAS','size M RED color','','clothes', 'CENTER','Tel-Aviv','mario.saliba98@gmail.com','0543198210', 'yes','delivered'),
+('T-shirt JOUVANI','size S BLACK color','','clothes', 'SOUTH','Eilat','mario.saliba98@gmail.com','0543198210', 'yes','delivered'),
+('T-shirt GUCCI','size XS YELLOW color','','clothes', 'SOUTH','Eilat','mario.saliba98@gmail.com','0543198210', 'no','delivered'),
+('T-shirt SELECT','size XXS PINK color','','clothes', 'SOUTH','Eilat','mario.saliba98@gmail.com','0543198210', 'no','delivered'),
 ('Hover','','','elec-devices', 'NORTH','NAHARIYA','mario.saliba98@gmail.com','0543198210', 'no','deleted'),
 ('Oven','','','elec-devices', 'NORTH','NAHARIYA','mario.saliba98@gmail.com','0543198210', 'no','deleted'),
 ('Iron','','','elec-devices', 'NORTH','Tel-Aviv','mario.saliba98@gmail.com','0543198210', 'no','deleted'),
