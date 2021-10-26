@@ -1,6 +1,14 @@
 const path = require("path");
 const db = require(path.join(__dirname, "..", "database", "connection"));
 
+function getDonationByMail(mailDonation) {
+  return db
+    .query(`SELECT * FROM donation WHERE email=${mailDonation}`)
+    .then((result) => {
+      return result.rows;
+    });
+}
+
 function addDonation(newDonation) {
   const donationEntry = [
     newDonation.item_title,
@@ -31,4 +39,4 @@ function getAllDonations() {
   });
 }
 
-module.exports = { addDonation, getAllDonations };
+module.exports = { addDonation, getAllDonations, getDonationByMail };

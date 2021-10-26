@@ -17,8 +17,17 @@ function getAllDonationsHandler(req, res, next) {
     })
     .catch(next);
 }
-
+function getDonationByMail(req, res, next) {
+  const email = req.params.email;
+  model
+    .getDonationByMail(email)
+    .then((donations) => {
+      res.status(200).send(donations);
+    })
+    .catch(next);
+}
 module.exports = {
   addDonationHandler,
   getAllDonationsHandler,
+  getDonationByMail,
 };

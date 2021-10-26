@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS donations CASCADE;
+DROP TABLE IF EXISTS donations,users CASCADE;
 
 CREATE TABLE donations (
   id SERIAL PRIMARY KEY,
@@ -15,6 +15,7 @@ CREATE TABLE donations (
   delivery varchar(255) NOT NULL,
   item_status varchar(255) NOT NULL
 );
+
 
 
 INSERT INTO donations (item_title,item_descriptions, photo, category, area,city,email,phone, delivery,item_status) VALUES

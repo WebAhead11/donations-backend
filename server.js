@@ -9,6 +9,7 @@ server.get("/", (req, res) => {
 });
 server.get("/allDonations", handlers.getAllDonationsHandler);
 server.post("/addItem", handlers.addDonationHandler);
+server.get("/donation/:email", handlers.getDonationByMail);
 
 const port = process.env.PORT || 5000;
 
