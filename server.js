@@ -1,9 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const handlers = require("./handlers/donationHandler.js");
 const searchHandler = require("./handlers/searchItem.js");
 const server = express();
 server.use(express.json());
-
+server.use(cors());
 server.get("/", (req, res) => {
   res.send("BATATATA");
 });

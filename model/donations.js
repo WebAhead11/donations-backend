@@ -72,6 +72,7 @@ function availableDeliItems() {
 }
 
 function deliveredItems() {
+  console.log("+5ara");
   return db.query(`SELECT COUNT item_title FROM donations WHERE item_status='delivered'`).catch((error) => {
     console.log(error);
   });
