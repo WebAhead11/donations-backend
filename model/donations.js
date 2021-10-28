@@ -1,3 +1,4 @@
+const { error } = require("console");
 const path = require("path");
 const db = require(path.join(__dirname, "..", "database", "connection"));
 
@@ -42,4 +43,60 @@ function searchDonations(category, area, delivery) {
   });
 }
 
-module.exports = { addDonation, searchDonations, getAllDonations, getDonationByMail };
+function deleteDonation(id) {
+  return db.query(`DELETE FROM donations WHERE id=$1`, [id]).catch((error) => {
+    console.log(error);
+  });
+}
+
+function updateDonation(donation) {
+  return db
+    .query(
+      `UPDATE donations SET item_title=${donation.item_title},item_descriptions=${donation.item_description},photo=${donation.photo},category=${donation.category},area=${donation.area},city=${donation.city},email=${donation.email},phone=${donation.phone},delivery=${donation.delivery} WHERE id=${donation.id}`
+    )
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+function updateStatus(status, id) {
+  return db.query(`UPDATE donations SET item_status=${status} WHERE id=${id}`).catch((error) => {
+    console.log(error);
+  });
+}
+
+function availableDeliItems() {
+  return db.query(`SELECT COUNT item_title FROM donations WHERE item_status='available' AND item_status='delivered' `).catch((error) => {
+    console.log(error);
+  });
+}
+
+function deliveredItems() {
+  return db.query(`SELECT COUNT item_title FROM donations WHERE item_status='delivered'`).catch((error) => {
+    console.log(error);
+  });
+}
+
+function last5() {
+  return db
+    .query(`SELECT item_title FROM donations WHERE item_status='available' order by id desc limit 5`)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+module.exports = {
+  addDonation,
+  availableDeliItems,
+  deliveredItems,
+  last5,
+  updateDonation,
+  updateStatus,
+  searchDonations,
+  getAllDonations,
+  getDonationByMail,
+  deleteDonation,
+};
