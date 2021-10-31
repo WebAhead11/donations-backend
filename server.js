@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const handlers = require("./handlers/donationHandler.js");
-const searchHandler = require("./handlers/searchItem.js");
+const handlers = require("./Handlers/donationHandler.js");
+const searchHandler = require("./Handlers/searchItem.js");
 const server = express();
 server.use(express.json());
 server.use(cors());

@@ -46,15 +46,30 @@ function updateDonationHandler(req, res, next) {
 }
 
 function last5Handler(req, res, next) {
-  res.send(model.last5()).catch(next);
+  model
+    .last5()
+    .then((lastFiveRS) => {
+      res.status(200).send(lastFiveRS);
+    })
+    .catch(next);
 }
 
 function deliveredItemsHandler(req, res, next) {
-  res.send(model.deliveredItems()).catch(next);
+  model
+    .deliveredItems()
+    .then((delevredItemsRS) => {
+      res.status(200).send(delevredItemsRS);
+    })
+    .catch(next);
 }
 
 function avaiableDeliItemsHandler(req, res, next) {
-  res.send(model.availableDeliItems).catch(next);
+  model
+    .availableDeliItems()
+    .then((deleveredAndAvailableRS) => {
+      res.status(200).send(deleveredAndAvailableRS);
+    })
+    .catch(next);
 }
 module.exports = {
   addDonationHandler,
