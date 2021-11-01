@@ -71,8 +71,18 @@ function avaiableDeliItemsHandler(req, res, next) {
     })
     .catch(next);
 }
+
+function countDonationsHandler(req, res, next) {
+  model
+    .countDonations(req.body.email)
+    .then((donationsNum) => {
+      res.status(200).send(donationsNum);
+    })
+    .catch(next);
+}
 module.exports = {
   addDonationHandler,
+  countDonationsHandler,
   updateDonationHandler,
   avaiableDeliItemsHandler,
   deliveredItemsHandler,
