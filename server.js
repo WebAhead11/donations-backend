@@ -17,7 +17,7 @@ server.delete("/dleteDonation", handlers.deleteDonationHandler);
 server.get("/latestItems", handlers.last5Handler);
 server.get("/deliveredItems", handlers.deliveredItemsHandler);
 server.get("/totalDonations", handlers.avaiableDeliItemsHandler);
-server.get("/donationsNumber", handlers.countDonationsHandler);
+server.post("/donationsNumber", handlers.countDonationsHandler);
 const port = process.env.PORT || 5000;
 
 server.listen(port, () => {
