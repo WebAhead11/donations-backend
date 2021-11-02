@@ -13,6 +13,19 @@ function searchDonationsHandler(req, res, next) {
     .catch(next);
 }
 
+function countSearchDonationsHandler(req, res, next) {
+  let category = req.body.category;
+  let area = req.body.area.toUpperCase();
+  let delivery = req.body.delivery;
+  model
+    .countSearchDonations(category, area, delivery)
+    .then((searchDonationsNum) => {
+      res.status(200).send(searchDonationsNum);
+    })
+    .catch(next);
+}
+
 module.exports = {
   searchDonationsHandler,
+  countSearchDonationsHandler,
 };

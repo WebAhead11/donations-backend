@@ -12,12 +12,14 @@ server.get("/allDonations", handlers.getAllDonationsHandler);
 server.post("/addItem", handlers.addDonationHandler);
 server.get("/donation/:email", handlers.getDonationByMail);
 server.post("/searchDonations", searchHandler.searchDonationsHandler);
-server.put("/updateDonation", handlers.updateDonationHandler);
-server.delete("/dleteDonation", handlers.deleteDonationHandler);
+server.post("/updateDonation", handlers.updateDonationHandler);
+// server.delete("/dleteDonation", handlers.deleteDonationHandler);
 server.get("/latestItems", handlers.last5Handler);
 server.get("/deliveredItems", handlers.deliveredItemsHandler);
 server.get("/totalDonations", handlers.avaiableDeliItemsHandler);
 server.post("/donationsNumber", handlers.countDonationsHandler);
+server.post("/updateStatus", handlers.updateStatusHandler);
+server.post("/searchDonationsNumber", searchHandler.countSearchDonationsHandler);
 const port = process.env.PORT || 5000;
 
 server.listen(port, () => {

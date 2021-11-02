@@ -40,7 +40,7 @@ function updateDonationHandler(req, res, next) {
   model
     .updateDonation(req.body)
     .then(() => {
-      res.status(303).redirect("/donation/:email");
+      res.status(200).send("");
     })
     .catch(next);
 }
@@ -80,8 +80,18 @@ function countDonationsHandler(req, res, next) {
     })
     .catch(next);
 }
+
+function updateStatusHandler(req, res, next) {
+  model
+    .updateStatus(req.body.status, req.body.id)
+    .then(() => {
+      res.status(200).send("");
+    })
+    .catch(next);
+}
 module.exports = {
   addDonationHandler,
+  updateStatusHandler,
   countDonationsHandler,
   updateDonationHandler,
   avaiableDeliItemsHandler,
