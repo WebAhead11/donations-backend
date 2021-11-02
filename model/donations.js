@@ -44,7 +44,7 @@ function searchDonations(category, area, delivery) {
     valueArr.push(category);
     queryStr += ` AND category=$2`;
   }
-  if (area != "") {
+  if (area != "" || area != "other") {
     valueArr.push(area);
     if (category != "") {
       queryStr += ` AND area=$3`;
@@ -126,7 +126,7 @@ function countSearchDonations(category, area, delivery) {
     valueArr.push(category);
     queryStr += ` AND category=$2`;
   }
-  if (area != "") {
+  if (area != "" || area != "other") {
     valueArr.push(area);
     if (category != "") {
       queryStr += ` AND area=$3`;
