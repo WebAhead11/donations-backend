@@ -11,7 +11,7 @@ server.get("/", (req, res) => {
 server.get("/allDonations", handlers.getAllDonationsHandler);
 server.post("/addItem", handlers.addDonationHandler);
 server.get("/donation/:email", handlers.getDonationByMail);
-server.get("/searchDonations", searchHandler.searchDonationsHandler);
+server.post("/searchDonations", searchHandler.searchDonationsHandler);
 server.put("/updateDonation", handlers.updateDonationHandler);
 server.delete("/dleteDonation", handlers.deleteDonationHandler);
 server.get("/latestItems", handlers.last5Handler);
