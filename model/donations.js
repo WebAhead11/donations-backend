@@ -4,7 +4,20 @@ const db = require(path.join(__dirname, "..", "database", "connection"));
 
 function getDonationByMail(mailDonation) {
   return db
-    .query(`SELECT * FROM donation WHERE email=${mailDonation}`)
+    .query(`SELECT * FROM donations WHERE email=$1 and item_status=$2`, [
+      mailDonation,
+      "available",
+    ])
+    .then((result) => {
+      return result.rows;
+    });
+}
+function getDonationByMailArchive(mailDonation) {
+  return db
+    .query(
+      `SELECT * FROM donations WHERE email=$1 and (item_status=$2 or item_status=$3)`,
+      [mailDonation, "deleted", "delivered"]
+    )
     .then((result) => {
       return result.rows;
     });
