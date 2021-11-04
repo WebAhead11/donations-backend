@@ -7,7 +7,6 @@
 
 Backend :
 
-Controllers ??????????
 Database
 Handlers
 Model
@@ -22,8 +21,6 @@ Connecting the database to the server is made in “build.js” and “connectio
 Handlers -->
 
 donationHandler.js
-
-donationsList.js ??????????
 
 searchItem.js : Let you search the items in our database by category,area,delivery.
 
