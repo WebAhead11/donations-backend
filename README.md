@@ -20,7 +20,7 @@ Connecting the database to the server is made in “build.js” and “connectio
 
 Handlers -->
 
-donationHandler.js
+donationHandler.js : To give a response to the server and contain all the handlers to the database queries.
 
 searchItem.js : Let you search the items in our database by category,area,delivery.
 
@@ -30,6 +30,6 @@ donations.js : you can access your donated-items list by your e-mail by submitin
 
 server.js -->
 
-Where all the routing tables are based with the server
+Where all the routing tables are based with the server.
 
 I wish you donate in our website/application to help more people, may this reflects on you one day, this will be a good deed for you :)
